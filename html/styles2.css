@@ -1,0 +1,171 @@
+/* Réinitialisation des marges et des paddings pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Couleur de fond générale */
+}
+
+/* Barre d'accueil */
+header {
+    background-color: #333; /* Couleur de fond de la barre d'accueil */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo .dades {
+    color: #007bff; /* Bleu pour 'Med' */
+}
+
+.logo .school {
+    color: #ffffff; /* Blanc pour 'Dades' */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Section principale avec image d'arrière-plan */
+.main-section {
+    background-image: url("/html/po.jpg"); /* Chemin relatif vers votre image d'arrière-plan */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.main-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.main-section p {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ajout des styles pour les boutons circulaires */
+.button-container {
+    display: flex;
+    justify-content: center; /* Arrange les boutons en ligne horizontale */
+    gap: 20px; /* Espacement entre les boutons */
+    margin-top: 20px;
+}
+
+button {
+    width: 120px; /* Taille du bouton */
+    height: 120px; /* Taille du bouton */
+    border: none;
+    border-radius: 50%; /* Boutons circulaires */
+    background-color: #ffffff; /* Couleur de fond */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Nécessaire pour positionner le texte */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button img {
+    width: 100%; /* Taille de l'image ajustée pour correspondre au bouton */
+    height: 100%;
+    border-radius: 50%; /* Images circulaires */
+}
+
+button:hover {
+    transform: scale(1.1); /* Effet d'agrandissement au survol */
+}
+
+button p {
+    position: absolute;
+    bottom: -35px; /* Augmente l'espace entre le bouton et le texte */
+    font-size: 14px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    margin: 0;
+    text-align: center;
+    width: 100%; /* Largeur pour centrer le texte */
+}
+h1 {
+    text-align: center;
+}
+/* أنماط عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* أنماط للأجهزة الصغيرة (شاشات الهواتف) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* تغيير ترتيب العناصر */
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* القائمة تصبح عمودية */
+    }
+
+    table {
+        width: 100%; /* جعل الجدول يملأ الشاشة */
+    }
+
+    th, td {
+        font-size: 14px; /* تصغير النص في الجدول */
+        padding: 5px;
+    }
+
+    .button-container button {
+        width: 100%; /* الأزرار تأخذ العرض الكامل */
+        margin-bottom: 10px;
+    }
+}
+

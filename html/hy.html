@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Dades</title>
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            cursor: pointer;
+            background-color: #84c1ff;
+            color: #000;
+        }
+        th:hover {
+            background-color: #6aa6e2;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #e8f4ff;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre d'accueil -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="dades">Dades</span><span class="school">school</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="1ac.html">Cours Collège</a></li>
+                    <li><a href="hj.html">Cours Lycée</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu principal avec le tableau -->
+    <h1>Bienvenue dans notre site web</h1>
+    <p>Voici un tableau des tâches des équipes :</p>
+
+    <div class="table-container">
+        <table id="sortable-table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">le leçon</th>
+                    <th onclick="sortTable(1)">Découverte des milieux naturels</th>
+                    <th onclick="sortTable(2)">La respiration et milieux de vie des êtres vivants</th>
+                    <th onclick="sortTable(3)">L’alimentation chez les êtres vivants</th>
+                    <th onclick="sortTable(4)">Les relations trophiques et les équilibres naturels</th>
+                    <th onclick="sortTable(4)">Les relations trophiques et les équilibres naturels</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>la date :</td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    
+                </tr>
+                <tr>
+                    <td>le leçon en pdf</td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    
+                </tr>
+                <tr>
+                    <td>les exercices</td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>le numero de leçon</td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script pour activer le tri -->
+    <script>
+        function sortTable(columnIndex) {
+            const table = document.getElementById("sortable-table");
+            const rows = Array.from(table.rows).slice(1); // Exclure la ligne d'en-tête
+            const isAscending = table.getAttribute("data-sort-direction") !== "asc";
+            
+            rows.sort((rowA, rowB) => {
+                const cellA = rowA.cells[columnIndex].innerText.trim();
+                const cellB = rowB.cells[columnIndex].innerText.trim();
+
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    // Si les cellules contiennent des nombres, on les compare comme tels
+                    return isAscending ? cellA - cellB : cellB - cellA;
+                } else {
+                    // Sinon, on compare les cellules comme des chaînes de texte
+                    return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+                }
+            });
+
+            // Réorganiser les lignes dans le tableau
+            rows.forEach(row => table.tBodies[0].appendChild(row));
+
+            // Mettre à jour l'état de tri
+            table.setAttribute("data-sort-direction", isAscending ? "asc" : "desc");
+        }
+    </script>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <h4>&copy; 2024 Mohamed Dades - Tous droits réservés®.</h4>
+        </div>
+    </footer>
+
+</body>
+</html>
